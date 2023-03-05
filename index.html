@@ -5,109 +5,110 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
     <title>Sudoku</title>
 </head>
 <body>
     <h1>¡Sudoku!</h1>
     <table>
         <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
-            <td>9</td>
+            <td id="11">1</td>
+            <td id="12">2</td>
+            <td id="13" class="linea">3</td>
+            <td id="14">4</td>
+            <td id="15">5</td>
+            <td id="16" class="linea">6</td>
+            <td id="17">7</td>
+            <td id="18">8</td>
+            <td id="19">9</td>
         </tr>
         <tr>
-            <td>9</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
-            <td>8</td>
+            <td id="21">4</td>
+            <td id="22">5</td>
+            <td id="23" class="linea">6</td>
+            <td id="24">7</td>
+            <td id="25">8</td>
+            <td id="26" class="linea">9</td>
+            <td id="27">6</td>
+            <td id="28">7</td>
+            <td id="29">8</td>
+        </tr>
+        <tr class="borde">
+            <td id="31">7</td>
+            <td id="32">8</td>
+            <td id="33" class="linea">9</td>
+            <td id="34">1</td>
+            <td id="35">2</td>
+            <td id="36" class="linea">3</td>
+            <td id="37">5</td>
+            <td id="38">6</td>
+            <td id="39">7</td>
         </tr>
         <tr>
-            <td>8</td>
-            <td>9</td>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
+            <td id="41">3</td>
+            <td id="42">1</td>
+            <td id="43" class="linea">2</td>
+            <td id="44">6</td>
+            <td id="45">4</td>
+            <td id="46" class="linea">5</td>
+            <td id="47">9</td>
+            <td id="48">7</td>
+            <td id="49">8</td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td id="51">6</td>
+            <td id="52">4</td>
+            <td id="53" class="linea">5</td>
+            <td id="54">9</td>
+            <td id="55">7</td>
+            <td id="56" class="linea">8</td>
+            <td id="57">3</td>
+            <td id="58">1</td>
+            <td id="59">2</td>
+        </tr>
+        <tr class="borde">
+            <td id="61">9</td>
+            <td id="62">7</td>
+            <td id="63" class="linea">8</td>
+            <td id="64">3</td>
+            <td id="65">1</td>
+            <td id="66" class="linea">2</td>
+            <td id="67">6</td>
+            <td id="68">4</td>
+            <td id="69">5</td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td id="71">2</td>
+            <td id="72">3</td>
+            <td id="73" class="linea">1</td>
+            <td id="74">7</td>
+            <td id="75">8</td>
+            <td id="76" class="linea">9</td>
+            <td id="77">1</td>
+            <td id="78">2</td>
+            <td id="79">3</td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td id="81">5</td>
+            <td id="82">6</td>
+            <td id="83" class="linea">4</td>
+            <td id="84">6</td>
+            <td id="85">7</td>
+            <td id="86" class="linea">8</td>
+            <td id="87">9</td>
+            <td id="88">1</td>
+            <td id="89">2</td>
         </tr>
         <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-        </tr>
-        <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
+            <td id="91">8</td>
+            <td id="92">9</td>
+            <td id="93" class="linea">7</td>
+            <td id="94">0</td>
+            <td id="95">0</td>
+            <td id="96" class="linea">0</td>
+            <td id="97">0</td>
+            <td id="98">0</td>
+            <td id="99">0</td>
         </tr>
     </table>
 </body>
