@@ -20,8 +20,6 @@ function random() {
     return Math.floor(Math.random() * 9) + 1
 }
 function randome(lista) {
-    console.log("lista:");
-    console.log(lista);
     let n = 0
     do {
         n = Math.floor(Math.random() * 9) + 1
@@ -48,7 +46,7 @@ function Depurar_matriz() {
             variable.endsWith(inicial[1])) && j != i) {
                 listaInical.push(variable)
                 listaNumeral.push(matriz.numeros[j])
-            }
+            } 
         }
         do {
             for (let j = 0; j < listaNumeral.length; j++) {
