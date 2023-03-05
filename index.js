@@ -26,8 +26,8 @@ function randome(lista) {
     } while (lista.includes(n));
     return n
 }
-function Llenar_matriz(cantidad) {
-    Crear_matriz(cantidad)
+function Llenar_matriz() {
+    const cantidad = matriz.numeros.length
     for (let i = 0; i < cantidad; i++) {
         let casilla = document.getElementById(matriz.ubicaciones[i])
         casilla.innerHTML = matriz.numeros[i]
@@ -44,21 +44,18 @@ function Depurar_matriz() {
             let variable = matriz.ubicaciones[j]
             if ((variable.startsWith(inicial[0]) || 
             variable.endsWith(inicial[1])) && j != i) {
-                listaInical.push(variable)
-                listaNumeral.push(matriz.numeros[j])
+                if (matriz.numeros[j] != numeral) {
+                    listaInical.push(variable)
+                    listaNumeral.push(matriz.numeros[j])   
+                }
             } 
         }
-        do {
-            for (let j = 0; j < listaNumeral.length; j++) {
-                if (listaNumeral[j] == numeral) {
-                    listaNumeral[j] = randome(listaNumeral)
-                }
-            }
-        } while (listaNumeral.includes(numeral));
         console.log(listaInical)
         console.log(listaNumeral)
     }
     Llenar_matriz()
 }
-Llenar_matriz(36)
+const facil = 38
+Crear_matriz(facil)
 Depurar_matriz()
+Llenar_matriz()
