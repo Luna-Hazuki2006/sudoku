@@ -38,5 +38,6 @@ h1, p {
     background-color: cadetblue;
 }
 .botones {
+    text-align: center;
     align-items: center;
 }
