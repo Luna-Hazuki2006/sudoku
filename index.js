@@ -20,6 +20,8 @@ function Crear_matriz(cantidad) {
         let n = random()
         numeros.push(n)
     }
+    console.log(ubicaciones);
+    console.log(numeros);
     matriz.ubicaciones = ubicaciones
     matriz.numeros = numeros
     console.log(matriz)
@@ -53,8 +55,11 @@ function Depurar_matriz() {
             if (listaNumeral.includes(numeral)) {
                 for (let j = 0; j < listaInical.length; j++) {
                     let variable = listaInical[j]
+                    let original = document.getElementById(variable)
+                    let probable = document.getElementById(inicial)
                     if (variable.startsWith(inicial[0]) || 
-                        variable.endsWith(inicial[1])) {
+                        variable.endsWith(inicial[1]) || 
+                        original.getAttribute("name") == probable.getAttribute("name")) {
                         repetido = true
                     }
                 }
@@ -71,16 +76,6 @@ function Depurar_matriz() {
             listaInical.push(inicial)
             listaNumeral.push(numeral)
         }
-        // for (let j = 0; j < matriz.numeros.length; j++) {
-        //     let variable = matriz.ubicaciones[j]
-        //     if ((variable.startsWith(inicial[0]) || 
-        //     variable.endsWith(inicial[1])) && j != i) {
-        //         if (matriz.numeros[j] != numeral) {
-        //             listaInical.push(variable)
-        //             listaNumeral.push(matriz.numeros[j])   
-        //         }
-        //     } 
-        // }
     }
     matriz.numeros = listaNumeral
     matriz.ubicaciones = listaInical
@@ -88,7 +83,7 @@ function Depurar_matriz() {
     console.log(listaNumeral)
     Llenar_matriz()
 }
-const facil = 38
+const facil = 17
 Limpiar_matriz()
 Crear_matriz(facil)
 Depurar_matriz()
