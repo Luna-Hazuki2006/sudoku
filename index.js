@@ -88,7 +88,7 @@ function Depurar_matriz() {
     console.log(listaNumeral)
     Llenar_matriz()
 }
-const facil = 17
+const facil = 25
 Limpiar_matriz()
 Crear_matriz(facil)
 Depurar_matriz()
