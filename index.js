@@ -52,16 +52,23 @@ function Depurar_matriz() {
         let numeral = matriz.numeros[i]
         if (listaInical.length != 0) {
             if (listaNumeral.includes(numeral)) {
+                let lista = []
                 for (let j = 0; j < listaInical.length; j++) {
                     let variable = listaInical[j]
+                    let numerable = listaNumeral[j]
                     let original = document.getElementById(variable)
                     let probable = document.getElementById(inicial)
                     if (variable.startsWith(inicial[0]) || 
                         variable.endsWith(inicial[1]) || 
                         original.getAttribute("name") == probable.getAttribute("name")) {
+                        lista.push(numerable)
                     }
                 }
-                if (!repetido) {
+                if (lista.length != 0) {
+                    numeral = randome(lista)
+                    listaInical.push(inicial)
+                    listaNumeral.push(numeral)
+                } else {
                     listaInical.push(inicial)
                     listaNumeral.push(numeral)
                 }
