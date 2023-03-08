@@ -26,7 +26,6 @@ function Crear_matriz(cantidad) {
     }
     matriz.ubicaciones = ubicaciones
     matriz.numeros = numeros
-    console.log(matriz)
 }
 function random() {
     return Math.floor(Math.random() * 9) + 1
@@ -95,8 +94,7 @@ function Depurar_matriz() {
     }
     matriz.numeros = listaNumeral
     matriz.ubicaciones = listaInical
-    console.log(listaInical)
-    console.log(listaNumeral)
+    console.log(matriz);
     return "bien"
 }
 function Generar_matriz() {
