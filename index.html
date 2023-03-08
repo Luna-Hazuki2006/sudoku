@@ -14,9 +14,32 @@
     <p>
         ¡Hola! aquí se puede apreciar un sudoku. Bonito ¿verdad?
     </p>
+    <form>
+        <label for="cantidad">Cantidad de números autogenrados:</label>
+        <select name="cantidad" id="cantidad">
+            <option value="17">17</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+        </select>
+        <button type="button" onclick="Generar_matriz()">Auto generar</button>
+    </form>
+    <form>
+        <label for="numero">Número que vas a poner</label>
+        <select name="numero" id="numero">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+        </select>
+    </form>
     <table>
         <tr>
-            <td id="11" name="uno" onclick="alert('And remember, better call Saul!');"></td>
+            <td id="11" name="uno">1</td>
             <td id="12" name="uno">2</td>
             <td id="13" name="uno" class="linea">3</td>
             <td id="14" name="dos">4</td>

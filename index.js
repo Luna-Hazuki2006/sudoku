@@ -7,6 +7,10 @@ function Limpiar_matriz() {
         for (let j = 1; j < 10; j++) {
             let celda = document.getElementById(i + "" + j)
             celda.innerHTML = " "
+            if (celda.classList.contains("original")) {
+                celda.classList.remove("original")
+            }
+            celda.setAttribute("onclick", "Agregar_numero_matriz();")
         }
     }
 }
@@ -20,8 +24,6 @@ function Crear_matriz(cantidad) {
         let n = random()
         numeros.push(n)
     }
-    console.log(ubicaciones);
-    console.log(numeros);
     matriz.ubicaciones = ubicaciones
     matriz.numeros = numeros
     console.log(matriz)
@@ -30,11 +32,16 @@ function random() {
     return Math.floor(Math.random() * 9) + 1
 }
 function randome(lista) {
+    let errores = 0
     let n = 0
     do {
         n = Math.floor(Math.random() * 9) + 1
-    } while (lista.includes(n));
-    return n
+        errores++
+    } while (lista.includes(n) && errores != 90);
+    if (errores == 90) {
+        console.log("ya basta");
+    }
+    return (errores == 90) ? "basta" : n
 }
 function Llenar_matriz() {
     const cantidad = matriz.numeros.length
@@ -42,6 +49,7 @@ function Llenar_matriz() {
         let casilla = document.getElementById(matriz.ubicaciones[i])
         casilla.innerHTML = matriz.numeros[i]
         casilla.classList.add("original")
+        casilla.removeAttribute("onclick")
     }
 }
 function Depurar_matriz() {
@@ -66,6 +74,9 @@ function Depurar_matriz() {
                 }
                 if (lista.length != 0) {
                     numeral = randome(lista)
+                    if (numeral == "basta") {
+                        return numeral
+                    }
                     listaInical.push(inicial)
                     listaNumeral.push(numeral)
                 } else {
@@ -86,10 +97,23 @@ function Depurar_matriz() {
     matriz.ubicaciones = listaInical
     console.log(listaInical)
     console.log(listaNumeral)
+    return "bien"
+}
+function Generar_matriz() {
+    const lista = document.getElementById("cantidad")
+    let opcion = lista.options[lista.selectedIndex].value
+    Limpiar_matriz()
+    Crear_matriz(opcion)
+    let seguro = Depurar_matriz()
+    if (seguro == 'basta') {
+        Generar_matriz()
+        return
+    }
     Llenar_matriz()
 }
-const facil = 25
-Limpiar_matriz()
-Crear_matriz(facil)
-Depurar_matriz()
-Llenar_matriz()
+function Agregar_numero_matriz() {
+    const lista = document.getElementById("numero")
+    let numero = lista.options[lista.selectedIndex].value
+    alert(window.Event)
+}
+Generar_matriz()
