@@ -10,7 +10,7 @@ function Limpiar_matriz() {
             if (celda.classList.contains("original")) {
                 celda.classList.remove("original")
             }
-            celda.setAttribute("onclick", "Agregar_numero_matriz();")
+            celda.setAttribute("onclick", "Agregar_numero_matriz(this);")
         }
     }
 }
@@ -109,9 +109,9 @@ function Generar_matriz() {
     }
     Llenar_matriz()
 }
-function Agregar_numero_matriz() {
+function Agregar_numero_matriz(casilla) {
     const lista = document.getElementById("numero")
     let numero = lista.options[lista.selectedIndex].value
-    alert(window.Event)
+    casilla.innerHTML = numero
 }
 Generar_matriz()
