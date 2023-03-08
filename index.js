@@ -114,4 +114,36 @@ function Agregar_numero_matriz(casilla) {
     let numero = lista.options[lista.selectedIndex].value
     casilla.innerHTML = numero
 }
+function Reiniciar_matriz() {
+    Limpiar_matriz()
+    Llenar_matriz()
+}
+function Terminar_matriz() {
+    let uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve = 0
+    for (let i = 1; i < 10; i++) {
+        for (let j = 1; j < 10; j++) {
+            let celda = document.getElementById(i + "" + j)
+            switch (celda.value) {
+                case '1': uno++; break;
+                case '2': dos++; break;
+                case '3': tres++; break;
+                case '4': cuatro++; break;
+                case '5': cinco++; break;
+                case '6': seis++; break;
+                case '7': siete++; break;
+                case '8': ocho++; break;
+                case '9': nueve++; break;
+                default:
+                    break;
+            }
+        }
+    }
+    if (uno == dos && dos == tres && tres == cuatro && 
+        cuatro == cinco && cinco == seis && seis == siete && 
+        siete == ocho && ocho == nueve) {
+        alert('¡Lo lograste! El sudoku es correcto')
+    } else {
+        alert('¡Oh no! El sudoku es incorrecto')
+    }
+}
 Generar_matriz()
