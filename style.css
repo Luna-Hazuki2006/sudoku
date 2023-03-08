@@ -21,9 +21,14 @@ td {
 td:hover {
     background-color: aliceblue;
 }
-h1, p {
+h1, p, label, button, option, select {
     text-align: center;
     font-family: cursive;
+}
+button {
+    border-radius: 5px;
+    border: 2px dotted purple;
+    background-color: violet;
 }
 .borde {
     border-bottom: 2px solid black;
@@ -33,6 +38,7 @@ h1, p {
 }
 .original {
     font-weight: bold;
+    color: blue;
 }
 .original:hover {
     background-color: cadetblue;
