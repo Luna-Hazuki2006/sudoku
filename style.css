@@ -21,7 +21,7 @@ td {
 td:hover {
     background-color: aliceblue;
 }
-h1, p, label, button, option, select {
+h1, p, label, button, option, select, li {
     text-align: center;
     font-family: cursive;
 }
