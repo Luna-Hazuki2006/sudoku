@@ -17,12 +17,14 @@
         en las columnas, filas y subcuadrados se repitan <br>
         Para llenar las casillas se tiene que presionar la casilla que quiere cambiar, 
         y el número que esté en la segunda lista desplegable será el número al que cambiará <br>
+        (Se puede poner números sin importar si ya había uno ahí, siempre y cuando 
+        no sea de color azul) <br>
         Los números autogenerados (azules) no pueden ser cambiados <br>
         El botón de reiniciar es para devolver todo a como estaba antes <br>
         Se recomienda usar el 25 en la auto generación <br>
         El botón terminar mostrará si el resultado es correcto o incorrecto
     </p>
-    <form>
+    <form class="espacio">
         <label for="cantidad">Cantidad de números autogenrados:</label>
         <select name="cantidad" id="cantidad">
             <option value="17">17</option>
@@ -31,7 +33,7 @@
         </select>
         <button type="button" onclick="Generar_matriz()">Auto generar</button>
     </form>
-    <form>
+    <form class="espacio">
         <label for="numero">Número que vas a poner</label>
         <select name="numero" id="numero">
             <option value="1">1</option>
@@ -43,6 +45,7 @@
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
+            <option value=" "> </option>
         </select>
     </form>
     <table>
@@ -159,6 +162,10 @@
             Natasha<br>
             Fabiana<br>
             Branjelis<br>
+        </p>
+        <p>
+            Si quieres el código fuente del programa, puedes acceder aquí 
+            <a href="" target="_blank">a su repositorio de Github</a>
         </p>
     </footer>
 </body>
