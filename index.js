@@ -91,7 +91,6 @@ function Depurar_matriz() {
                     listaInical.push(inicial)
                     listaNumeral.push(numeral)
                 }
-                
             } else {
                 listaInical.push(inicial)
                 listaNumeral.push(numeral)
