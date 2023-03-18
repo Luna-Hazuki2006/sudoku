@@ -54,39 +54,33 @@ function Llenar_matriz() {
     }
 }
 function Depurar_matriz() {
-    let constante = 0
-    do {
-        constante++
-        let listaInical = []
-        let listaNumeral = []
-        for (let i = 0; i < matriz.numeros.length; i++) {
-            let inicial = matriz.ubicaciones[i]
-            let numeral = matriz.numeros[i]
-            if (listaInical.length != 0) {
-                if (listaNumeral.includes(numeral)) {
-                    let lista = []
-                    for (let j = 0; j < listaInical.length; j++) {
-                        let variable = listaInical[j]
-                        let numerable = listaNumeral[j]
-                        let original = document.getElementById(variable)
-                        let probable = document.getElementById(inicial)
-                        if (variable.startsWith(inicial[0]) || 
-                            variable.endsWith(inicial[1]) || 
-                            original.getAttribute("name") == probable.getAttribute("name")) {
-                            lista.push(numerable)
-                        }
+    constante++
+    let listaInical = []
+    let listaNumeral = []
+    for (let i = 0; i < matriz.numeros.length; i++) {
+        let inicial = matriz.ubicaciones[i]
+        let numeral = matriz.numeros[i]
+        if (listaInical.length != 0) {
+            if (listaNumeral.includes(numeral)) {
+                let lista = []
+                for (let j = 0; j < listaInical.length; j++) {
+                    let variable = listaInical[j]
+                    let numerable = listaNumeral[j]
+                    let original = document.getElementById(variable)
+                    let probable = document.getElementById(inicial)
+                    if (variable.startsWith(inicial[0]) || 
+                        variable.endsWith(inicial[1]) || 
+                        original.getAttribute("name") == probable.getAttribute("name")) {
+                        lista.push(numerable)
                     }
-                    if (lista.length != 0) {
-                        numeral = randome(lista)
-                        if (numeral == "basta") {
-                            return numeral
-                        }
-                        listaInical.push(inicial)
-                        listaNumeral.push(numeral)
-                    } else {
-                        listaInical.push(inicial)
-                        listaNumeral.push(numeral)
+                }
+                if (lista.length != 0) {
+                    numeral = randome(lista)
+                    if (numeral == "basta") {
+                        return numeral
                     }
+                    listaInical.push(inicial)
+                    listaNumeral.push(numeral)
                 } else {
                     listaInical.push(inicial)
                     listaNumeral.push(numeral)
@@ -95,10 +89,13 @@ function Depurar_matriz() {
                 listaInical.push(inicial)
                 listaNumeral.push(numeral)
             }
+        } else {
+            listaInical.push(inicial)
+            listaNumeral.push(numeral)
         }
-        matriz.numeros = listaNumeral
-        matriz.ubicaciones = listaInical
-    } while (constante != 2);
+    }
+    matriz.numeros = listaNumeral
+    matriz.ubicaciones = listaInical
     console.log(matriz);
     return "bien"
 }
