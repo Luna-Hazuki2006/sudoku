@@ -4,6 +4,9 @@ const matriz = {
     ubicaciones: [], 
     numeros: []
 }
+// se vacía todas las celdas con dos bucles que 
+// dan el id de ellas, en estas se le vacían 
+// y se les agrega el evento de click
 function Limpiar_matriz() {
     for (let i = 1; i < 10; i++) {
         for (let j = 1; j < 10; j++) {
