@@ -54,7 +54,6 @@ function Llenar_matriz() {
     }
 }
 function Depurar_matriz() {
-    constante++
     let listaInical = []
     let listaNumeral = []
     for (let i = 0; i < matriz.numeros.length; i++) {
