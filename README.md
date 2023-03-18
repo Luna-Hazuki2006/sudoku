@@ -13,4 +13,5 @@ Las reglas son bastante simples, tienes que llenar el cuadro con los números de
 Fácil ¿verdad?
 Si quieres aportar o ayudarme en este programa <br>
 No duddes en: <br>
-![imagen](https://user-images.githubusercontent.com/86622512/226115816-0ccbe1ac-e722-466f-8782-82efc1c23fcf.png)
+
+![imagen](https://user-images.githubusercontent.com/86622512/226116649-5ab20582-510a-4e3e-8807-878e2070d902.png)
