@@ -1,12 +1,19 @@
 // en memoria de...
 // boisterous-biscochitos-b3dd75
 function Inicio_confirmado() {
-    if (localStorage.getItem("matriz")) return
-    const matriz = {
-        ubicaciones: [], 
-        numeros: []
+    if (obtener_matriz()) {
+        console.log(obtener_matriz());
+        console.log("la matriz ya existe");
+    } else {
+        console.log("primera matriz");
+        let matriz = {
+            ubicaciones: [], 
+            numeros: []
+        }
+        definir_matriz(matriz)
     }
-    definir_matriz(matriz)
+    Limpiar_matriz()
+    Llenar_matriz()
 }
 // se vacía todas las celdas con dos bucles que 
 // dan el id de ellas, en estas se le vacían 
@@ -166,4 +173,3 @@ function Terminar_matriz() {
     }
 }
 Inicio_confirmado()
-Generar_matriz()
