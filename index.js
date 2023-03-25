@@ -30,6 +30,10 @@ function Limpiar_matriz() {
         }
     }
 }
+// tiene como parámetro la cantidad de números originales.
+// primero se saca la ubicación aleatoriamente
+// después se saca el número aleatoriamente
+// por último se pasa la información a la matriz
 function Crear_matriz(cantidad) {
     const ubicaciones = []
     const numeros = []
