@@ -1,8 +1,12 @@
 // en memoria de...
 // boisterous-biscochitos-b3dd75
-const matriz = {
-    ubicaciones: [], 
-    numeros: []
+function Inicio_confirmado() {
+    if (localStorage.getItem("matriz")) return
+    const matriz = {
+        ubicaciones: [], 
+        numeros: []
+    }
+    definir_matriz(matriz)
 }
 // se vacía todas las celdas con dos bucles que 
 // dan el id de ellas, en estas se le vacían 
@@ -29,11 +33,19 @@ function Crear_matriz(cantidad) {
         let n = random()
         numeros.push(n)
     }
+    let matriz = obtener_matriz()
     matriz.ubicaciones = ubicaciones
     matriz.numeros = numeros
+    definir_matriz(matriz)
 }
 function random() {
     return Math.floor(Math.random() * 9) + 1
+}
+function obtener_matriz() {
+    return JSON.parse(localStorage.getItem("matriz"))
+}
+function definir_matriz(matriz) {
+    localStorage.setItem("matriz", JSON.stringify(matriz))
 }
 function randome(lista) {
     let errores = 0
@@ -48,6 +60,7 @@ function randome(lista) {
     return (errores == 90) ? "basta" : n
 }
 function Llenar_matriz() {
+    let matriz = obtener_matriz()
     const cantidad = matriz.numeros.length
     for (let i = 0; i < cantidad; i++) {
         let casilla = document.getElementById(matriz.ubicaciones[i])
@@ -59,6 +72,7 @@ function Llenar_matriz() {
 function Depurar_matriz() {
     let listaInical = []
     let listaNumeral = []
+    let matriz = obtener_matriz()
     for (let i = 0; i < matriz.numeros.length; i++) {
         let inicial = matriz.ubicaciones[i]
         let numeral = matriz.numeros[i]
@@ -99,6 +113,7 @@ function Depurar_matriz() {
     matriz.numeros = listaNumeral
     matriz.ubicaciones = listaInical
     console.log(matriz);
+    definir_matriz(matriz)
     return "bien"
 }
 function Generar_matriz() {
@@ -150,4 +165,5 @@ function Terminar_matriz() {
         alert('¡Oh no! El sudoku es incorrecto')
     }
 }
+Inicio_confirmado()
 Generar_matriz()
